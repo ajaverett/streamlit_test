@@ -2,32 +2,31 @@
 import streamlit as st
 #https://docs.streamlit.io/library/api-reference/widgets/st.button
 
+# Title
 st.title('This is the title')
 
-
-
+# Typing text
 user_text = st.text_area("Enter Some text here")
 st.write(f"You just typed: {user_text}")
-st.markdown("<br><br><br><br>", unsafe_allow_html=True)
 
 
-
+# Button
 if st.checkbox("Show/Hide"):
     st.write("You just clicked me")
-st.markdown("<br><br><br><br>", unsafe_allow_html=True)
 
 
-
-status = st.radio("Do you like green or yellow", ("Green!", "Yellow!"))
+# Radio button
+status = st.radio("Do you like green or yellow", ("Green!", "Yellow!", "Red!"))
 if status == "Green!":
     st.success("this is a success message")
-else:
+elif status == "Yellow!":
     st.warning("this is a warning message")
-st.markdown("<br><br><br><br>", unsafe_allow_html=True)
+elif status == "Red!":
+    st.error("this is an error message")
 
 
 
-# selectbox
+# Select box
 occupation = st.selectbox("Your occupation", ["Programmer", "Data Scientist", "Doctor", "Businessman"])
 st.write(f"You selected {occupation}")
 
